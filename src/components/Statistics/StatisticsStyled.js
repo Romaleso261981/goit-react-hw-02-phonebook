@@ -1,3 +1,4 @@
+// import { func } from 'prop-types';
 import styled from 'styled-components';
 
 export const StatisticSection = styled.section`
@@ -9,7 +10,7 @@ export const StatisticSection = styled.section`
 `;
 
 export const Title = styled.h2`
-  font-size: 35px;
+  font-size: ${widthRandom};
   padding-top: 30px;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -29,8 +30,9 @@ export const StatisticItem = styled.li`
   width: 100%;
   padding: 12px;
   background-color: ${getRandomHexColor};
-  color: white;
+  color: black;
   font-size: 20px;
+  border: 1px solid black;
 `;
 
 export const Label = styled.span`
@@ -40,6 +42,10 @@ export const Label = styled.span`
 export const Percentage = styled.span`
   font-weight: bold;
 `;
+
+function widthRandom() {
+  return `${Math.floor(Math.random() * 100)}px`;
+}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
